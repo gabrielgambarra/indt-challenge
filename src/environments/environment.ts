@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://blackbox-v1-submarino.b2w.io/defer/produto/1708602357?pfm_carac=livro'
 };
 
 /*

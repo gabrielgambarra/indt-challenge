@@ -1,21 +1,5 @@
 <div class="cards-container">
 
-    <app-product-card></app-product-card>
-    
-    <app-product-card></app-product-card>
-    
-    <app-product-card></app-product-card>
-    
-    <app-product-card></app-product-card>
-    
-    <app-product-card></app-product-card>
-    
-    <app-product-card></app-product-card>
-    
-    <app-product-card></app-product-card>
-    
-    <app-product-card></app-product-card>
-
-    <app-product-card></app-product-card>
+    <app-product-card *ngFor="let product of products | keyvalue" [product]="product.value"></app-product-card>
 
 </div>    

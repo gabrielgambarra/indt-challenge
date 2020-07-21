@@ -1,16 +1,16 @@
 <div class="card-container">
 
     <div class="image-container">
-        <img src="https://images-submarino.b2w.io/produtos/imagens/5588318/5588319_1GG.jpg" alt="Book image">
+        <img [src]="product.image.large" alt="Book image">
     </div>
 
     <div class="info-container">
-        <p>Livro - O conto da aiaLivro - O conto da aiaLivro - O conto da aia</p>
-        <small>Submarino</small>
+        <p>{{ product.name }}</p>
+        <small>{{ product.sellerName }}</small>
 
         <div class="price-container">
-            <p><strong>R$ 39,23</strong></p>
-            <small>2x de R$ 10,58 sem juros</small>
+            <p><strong>{{ product.price | currency: product.currency }}</strong></p>
+            <small>{{ product.installment }}</small>
         </div>
     </div>
 </div>
