@@ -1,0 +1,12 @@
+@media only screen and (min-width: 768px) {
+    .cards-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        max-width: 1920px;
+        margin: 0 auto;
+
+        app-product-card {
+            padding: 1rem;
+        }
+    }
+}
