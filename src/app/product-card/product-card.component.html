@@ -7,10 +7,10 @@
     <div class="info-container">
         <p>{{ product.name }}</p>
         <small>{{ product.sellerName }}</small>
+    </div>
 
-        <div class="price-container">
-            <p><strong>{{ product.price | currency: product.currency }}</strong></p>
-            <small>{{ product.installment }}</small>
-        </div>
+    <div class="price-container">
+        <p><strong>{{ product.price | currency: product.currency }}</strong></p>
+        <small>{{ product.installment }}</small>
     </div>
 </div>
