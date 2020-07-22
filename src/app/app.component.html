@@ -1,5 +1,7 @@
 <div class="cards-container">
+    <app-product-card *ngFor="let product of paginatedProducts" [product]="product"></app-product-card>
+</div>
 
-    <app-product-card *ngFor="let product of products | keyvalue" [product]="product.value"></app-product-card>
-
-</div>    
+<div *ngIf="canShowNextPageButton" class="load-more-products-button">
+    <button (click)="nextPage()">Mais produtos aqui!</button>
+</div>
