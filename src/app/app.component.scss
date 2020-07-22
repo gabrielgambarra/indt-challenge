@@ -1,3 +1,7 @@
+.cards-container {
+    padding: 10px;
+}
+
 .load-more-products-button {
     text-align: center;
     padding: 1rem;
@@ -24,6 +28,10 @@
 }
 
 @media only screen and (min-width: 768px) {
+    .load-more-products-button {
+        margin: auto;
+    }
+    
     .cards-container {
         display: flex;
         overflow-y: auto;
