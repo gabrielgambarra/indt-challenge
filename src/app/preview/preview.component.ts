@@ -63,4 +63,13 @@ export class PreviewComponent implements OnInit {
   private paginateArray(): Product[] {
     return this.allProducts.slice((this.page_number - 1) * this.page_size, this.page_number * this.page_size);
   }
+
+  public copyUrl(): void {
+    // colocar um id na div e passar pro getElement
+    const inputText: HTMLInputElement = document.getElementById('inputText') as HTMLInputElement;
+    inputText.select();
+    inputText.setSelectionRange(0, 99999);
+
+    document.execCommand('copy');
+  }
 }
