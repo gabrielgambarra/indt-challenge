@@ -25,11 +25,8 @@
 
 @media only screen and (min-width: 768px) {
     .cards-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto;
-        max-width: 1920px;
-        margin: 0 auto;
+        display: flex;
+        overflow-y: auto;
 
         app-product-card {
             padding: 1rem;
