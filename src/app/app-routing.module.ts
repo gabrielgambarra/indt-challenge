@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { ComponentViewComponent } from './component-view/component-view.component';
+import { PreviewComponent } from './preview/preview.component';
 
 export const AppRoutes: Routes = [
     {
@@ -12,11 +14,11 @@ export const AppRoutes: Routes = [
             },
             {
                 path: 'preview',
-                component: AppComponent
+                component: PreviewComponent
             },
             {
-                path: 'prod-component',
-                component: AppComponent
+                path: 'prod',
+                component: ComponentViewComponent
             },
         ]
     }

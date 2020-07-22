@@ -1,0 +1,43 @@
+.cards-container {
+    padding: 10px;
+}
+
+.load-more-products-button {
+    text-align: center;
+    padding: 1rem;
+
+    button {
+        border: 1px solid rgba(0,0,0,.12);
+        background: 0 0;
+        color: #888888;
+        border-radius: 7px;
+        outline: none;
+        font-size: 16px;
+        transition: box-shadow 0.3s;
+        cursor: pointer;
+        padding: 1rem;
+
+        &:hover {
+            box-shadow: 2px 4px 6px 0 rgba(140, 140, 140, 0.5);
+        }
+
+        &:active {
+            box-shadow: none;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .load-more-products-button {
+        margin: auto;
+    }
+    
+    .cards-container {
+        display: flex;
+        overflow-y: auto;
+
+        app-product-card {
+            padding: 1rem;
+        }
+    }
+}
