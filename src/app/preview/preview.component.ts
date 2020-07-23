@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../providers/models/product.model';
-import { ProductsService } from '../providers/services/products.service';
 
 @Component({
   selector: 'app-preview',
@@ -9,67 +7,26 @@ import { ProductsService } from '../providers/services/products.service';
 })
 export class PreviewComponent implements OnInit {
 
-  allProducts: Product[] = [];
-  paginatedProducts: Product[] = [];
-  page_size: number = 9;
-  page_number: number = 1;
-  canShowNextPageButton: boolean;
+  iFrameTag: string;
 
-  constructor(
-    private service: ProductsService
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getDataFromAPI();
+    this.formatIFrameTag();
   }
 
-  private getDataFromAPI() {
-    this.service.getProducts().subscribe(
-      success => {
-        this.allProducts = Object.values(success.products);
-        this.initFirstPage();
-      }
-    );
-  }
-
-  private initFirstPage() {
-    this.paginatedProducts = this.paginateArray();
-
-    this.canShowNextPageButton = this.paginatedProducts.length > 0 ? true : false;
-  }
-
-  public nextPage() {
-    this.page_number += 1;
-    Array.prototype.push.apply(this.paginatedProducts, this.paginateArray());
-
-    if (!this.hasNextPage()) {
-      this.canShowNextPageButton = false;
-    }
-  }
-
-  private hasNextPage(): boolean {
-    const fakeNextPage = this.page_number + 1;
-    const fakeNextPageProducts = this.allProducts.slice((fakeNextPage - 1) * this.page_size, fakeNextPage * this.page_size);
-
-    if (fakeNextPageProducts.length == 0) {
-      this.canShowNextPageButton = false;
-      return false;
-    } else {
-      this.canShowNextPageButton = true;
-      return true;
-    }
-  }
-
-  private paginateArray(): Product[] {
-    return this.allProducts.slice((this.page_number - 1) * this.page_size, this.page_number * this.page_size);
+  private formatIFrameTag() {
+    let prodUrl = window.location.href.replace('preview', 'prod');
+    this.iFrameTag = `<iframe src="${prodUrl}" frameborder="0" width="100%" height="510"></iframe>`;
   }
 
   public copyUrl(): void {
-    // colocar um id na div e passar pro getElement
-    const inputText: HTMLInputElement = document.getElementById('inputText') as HTMLInputElement;
+    const inputText: HTMLInputElement = document.getElementById('urlInput') as HTMLInputElement;
     inputText.select();
     inputText.setSelectionRange(0, 99999);
 
     document.execCommand('copy');
+
+    alert("Tag copied!");
   }
 }

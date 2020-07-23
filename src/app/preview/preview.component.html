@@ -1,9 +1,11 @@
-Preview
+<div class="iframe-code-container">
+    <p>Copy the code below to add the slider on your site.</p>
 
-<div class="cards-container">
-    <app-product-card *ngFor="let product of paginatedProducts" [product]="product"></app-product-card>
+    <div class="link-container">
+        <input type="text" id="urlInput" [value]="iFrameTag" readonly>
 
-    <div *ngIf="canShowNextPageButton" class="load-more-products-button">
-        <button (click)="nextPage()">Mais produtos aqui!</button>
+        <button (click)="copyUrl()">Copy</button>
     </div>
 </div>
+
+<app-component-view></app-component-view>

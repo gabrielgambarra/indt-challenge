@@ -4,6 +4,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    *:focus {
+        outline: none;
+    }
 }
 
 html,
@@ -13,4 +17,13 @@ body {
 
 body {
     color: #888888;
+}
+
+button {
+    cursor: pointer;
+
+    &:active {
+        box-shadow: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
 }
