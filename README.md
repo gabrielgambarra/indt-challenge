@@ -2,7 +2,7 @@
 
 GH Pages: https://gabrielgambarra.github.io/indt-challenge/
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
+This project was generated with [Angular CLI](https://angular.io/) version 10.0.3.
 
 
 # Running locally
@@ -10,7 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### Requirements
 
 1. [Node.js](https://nodejs.org/en/).
-2. [Angular CLI](https://github.com/angular/angular-cli).
+2. [Angular CLI](https://angular.io/guide/setup-local#install-the-angular-cli).
 3. [Download](https://github.com/gabrielgambarra/indt-challenge/archive/master.zip) the project.
 
 ### Installing dependecies
